@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 :root{ 
     --light-green: #7ed56f;
     --light-green-transparent: #7ed56fb6;
@@ -47,6 +48,7 @@ body{
 }
 
 .heading-container{
+    text-align: center;
 }
 
 .primary-heading{
@@ -56,6 +58,8 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    /*Used to fix the shaking effect in the heading title animation*/
+    backface-visibility: hidden;
     
 }
 
@@ -64,6 +68,9 @@ body{
     letter-spacing: 2rem;
     font-size: 3.2rem;
     font-weight: 400;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
 }
 
 .primary-heading-sub{
@@ -71,4 +78,80 @@ body{
     letter-spacing: 1rem;
     font-size: 1.2rem;
     font-weight: 700;
+    animation: moveInRight 1s ease-out;
+    margin-bottom: 4rem;
+}
+
+.btn:link, .btn:visited{
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 20px 40px;
+    border-radius: 50px;
+    /*Todos os elementos são animados*/
+    transition: all .2s;
+}
+
+.btn:hover{
+    transform: translateY(-0.2rem);
+    box-shadow: 0 0.6rem 1.2rem rgba(0, 0, 0, 0.2) ;
+}
+
+.btn:active{
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.2) ;
+}
+
+.btn-white{
+    color: #777;
+    background-color: white;
+}
+
+@keyframes moveInLeft{
+    /*Cada valor é um ponto no tempo da animação, e a ação entre parenteses será executada nesse ponto*/
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    80%{
+        transform: translateX(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveInRight{
+    /*Cada valor é um ponto no tempo da animação, e a ação entre parenteses será executada nesse ponto*/
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    80%{
+        transform: translateX(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media(max-width: 700px){
+    body{
+        padding: 15px;
+    }
+    .primary-heading-main{
+        letter-spacing: 1.4rem;
+        font-size: 2.5rem;
+    }
+    
+    .primary-heading-sub{
+        letter-spacing: 0.5rem;
+        font-size: 0.8rem;
+    }
 }
