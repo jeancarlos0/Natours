@@ -1,0 +1,24 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "tourism routes discover website",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "sass sass/main.scss css/style.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeancarlos0/Natours.git"
+  },
+  "author": "jecarlos.me@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeancarlos0/Natours/issues"
+  },
+  "homepage": "https://github.com/jeancarlos0/Natours#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "sass": "^1.26.10"
+  }
+}
