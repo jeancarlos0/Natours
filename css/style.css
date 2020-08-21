@@ -167,15 +167,44 @@ body {
   box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.2);
 }
 
+.composition {
+  position: relative;
+  width: 60%;
+}
+.composition_photo {
+  position: absolute;
+  width: 100%;
+  border-radius: 2px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+  transition: all 0.2s;
+}
+.composition_photo--p1 {
+  left: 0;
+  top: -4rem;
+}
+.composition_photo--p2 {
+  left: 20rem;
+  top: 2rem;
+}
+.composition_photo--p3 {
+  right: 2rem;
+  top: 12rem;
+}
+.composition_photo:hover {
+  transform: scale(1.5);
+  box-shadow: 0 2.5rem 6rem rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+}
+.composition:hover .composition_photo:not(:hover) {
+  transform: scale(0.9);
+  opacity: 0.8;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 0 10%;
-  gap: 2rem;
-}
-
-.grid-item img {
-  width: 600px;
+  gap: 4rem;
 }
 
 /*Old and weird way of doing grid*/
@@ -213,6 +242,11 @@ body {
   width: calc((100% - (6rem * 3))/4);
 }
 
+@media (max-width: 700px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
 .header {
   position: relative;
   display: flex;
