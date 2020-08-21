@@ -1,0 +1,29 @@
+*,
+*::after, *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    box-sizing: border-box;
+}
+
+@media(max-width: 700px){
+    html{
+        font-size: 8px;
+    }
+}
+
+@media(max-width: 500px){
+    body{
+        padding: 1.5rem;
+    }
+    .primary-heading--main{
+        font-size: 4rem;
+    }
+}

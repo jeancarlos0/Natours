@@ -1,0 +1,34 @@
+
+@keyframes moveInLeft{
+    /*Cada valor é um ponto no tempo da animação, e a ação entre parenteses será executada nesse ponto*/
+    0% {
+        opacity: 0;
+        transform: translateX(-10rem);
+    }
+
+    80%{
+        transform: translateX(1rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveInRight{
+    /*Cada valor é um ponto no tempo da animação, e a ação entre parenteses será executada nesse ponto*/
+    0% {
+        opacity: 0;
+        transform: translateX(10rem);
+    }
+
+    80%{
+        transform: translateX(-1rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
